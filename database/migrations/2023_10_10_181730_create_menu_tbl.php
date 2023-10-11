@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->integer('featured')->default(0);
             $table->integer('is_active')->default(1);
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('category_tbl')->onDelete('cascade');
             $table->timestamps();
         });

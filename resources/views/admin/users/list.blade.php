@@ -6,7 +6,7 @@
 @section('content')
  <!-- Content Wrapper. Contains page content -->
    
-    @include('layouts.partials._page_header',['mainTitle' => "Manage Categories", 'subTitle' => "Category"])
+    @include('layouts.partials._page_header',['mainTitle' => "Manage Users", 'subTitle' => "User Management"])
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">

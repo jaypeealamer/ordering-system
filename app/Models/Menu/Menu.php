@@ -1,12 +1,19 @@
 <?php
 
-namespace App\Models\Category;
+namespace App\Models\Menu;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Menu extends Model
 {
-    protected $table = 'category_tbl';
+    protected $table = 'menu_tbl';
     protected $guarded = [];
+
+    public function thecategory()
+    {
+        return $this->belongsTo('App\Models\Category\Category','category_id');
+
+    }
+
 
 }

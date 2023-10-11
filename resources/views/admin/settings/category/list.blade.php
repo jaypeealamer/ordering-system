@@ -13,19 +13,26 @@
             <div class="card">
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="category_datatable" class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Status</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                   </tbody>
-                    </tfoot>
+                <div class="table-responsive">
+                    <table id="category_datatable" style="width:100%"  class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tfoot>
                     </table>
+                </div>
                 </div>
                 <!-- /.card-body -->
                 </div>

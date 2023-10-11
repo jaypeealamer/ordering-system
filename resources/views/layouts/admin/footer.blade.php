@@ -7,6 +7,7 @@
   </footer>
 </div>
 <!-- ./wrapper -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
@@ -24,10 +25,19 @@
 <script src="{{ asset('adminlte/plugins/raphael/raphael.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/jquery-mapael/jquery.mapael.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
-<!-- ChartJS -->
-<script src="{{ asset('adminlte/plugins/chart.js/Chart.min.js') }}"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<!-- bs-custom-file-input -->
+<script src="{{ asset('adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+
+<!-- Select2 -->
+<script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
+
+<script>
+$(function () {
+
+  bsCustomFileInput.init();
+});
+</script>
 
 </body>
 </html>
