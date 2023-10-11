@@ -1,9 +1,9 @@
 <script>
-    function activeInactiveCategoryFunc(id, is_active){
-            let href = $('#activateCategory').attr('data-attr') + id + '/' + is_active;
+    function activeInactiveMenuFunc(id, is_active){
+            let href = $('#activateMenu').attr('data-attr') + id + '/' + is_active;
             title_text = (is_active) ? 'deactivate' : "activate";
             Swal.fire({
-            title: 'Are you sure you want to ' + title_text + ' this Category?',
+            title: 'Are you sure you want to ' + title_text + ' this Menu?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -20,7 +20,7 @@
                                         title: data.message,
                                         icon: 'success'
                                     });
-                                $('#category_datatable').DataTable().ajax.reload(null, false);
+                                $('#menu_datatable').DataTable().ajax.reload(null, false);
                             }
                         },
                         error:function(error){

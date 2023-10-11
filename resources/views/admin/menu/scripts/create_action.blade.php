@@ -12,8 +12,9 @@
                 $('#create_btn').html('PROCESSING....')
 
 
-                var href = $('#createCategoryForm').attr('action');
-                var data = new FormData(document.getElementById("createCategoryForm"));
+                var href = $('#createMenuForm').attr('action');
+                var data = new FormData(document.getElementById("createMenuForm"));
+
                 var csrfToken = $('meta[name="csrf-token"]').attr('content'); 
 
                 $.ajax({
@@ -42,10 +43,15 @@
                                 icon: 'success',
                                 title: result.message
                             })
+
+                            $('#category').val('').trigger('change');
+                            $("#featuredSwitch").prop("checked", false);
                             $("#name").val('');
                             $("#description").val('');
+                            $("#image").val('');
+                            $("#price").val('');
                             $('#modal_new').modal('hide');
-                            $('#category_datatable').DataTable().ajax.reload(null, false);
+                            $('#menu_datatable').DataTable().ajax.reload(null, false);
 
 
                         }else{

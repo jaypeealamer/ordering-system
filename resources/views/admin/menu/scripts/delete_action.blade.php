@@ -1,7 +1,7 @@
 <script>
-    function delCategoryFunc(id){
+    function delMenuFunc(id){
             Swal.fire({
-            title: 'Are you sure you want to delete this Category?',
+            title: 'Are you sure you want to delete this Menu?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -9,7 +9,7 @@
             confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    var deleteUrl = '{{ route("category.destroy.api", ":id") }}'.replace(':id', id);
+                    var deleteUrl = '{{ route("menu.destroy.api", ":id") }}'.replace(':id', id);
                     var csrfToken = $('meta[name="csrf-token"]').attr('content'); 
                     $.ajax({
                         method: "DELETE",
@@ -23,14 +23,14 @@
                                         title: data.message,
                                         icon: 'success'
                                     });
-                                $('#category_datatable').DataTable().ajax.reload(null, false);
+                                $('#menu_datatable').DataTable().ajax.reload(null, false);
                             }
                             else{
                                 Swal.fire({
                                         title: "Error Failed",
                                         icon: 'error'
                                     });
-                                $('#category_datatable').DataTable().ajax.reload(null, false);
+                                $('#menu_datatable').DataTable().ajax.reload(null, false);
                             }
                         },
                         error:function(error){

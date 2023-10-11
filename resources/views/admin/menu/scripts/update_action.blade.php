@@ -1,19 +1,28 @@
 <script>
-    $(document).on('click', '#updateCategory', function(event) {
+    $(document).on('click', '#updateMenu', function(event) {
             event.preventDefault();
             let href = $(this).attr('data-attr');
           
             $('#name_upd').val("");
             $('#description_upd').val("");
+            $('#category_upd').val('').trigger('change');
+            $('#price_upd').val('');
+            $("#featuredSwitch_upd").prop("checked", false);
+
             $.ajax({
                 url: href,
                 success: function(result) {
 
             $('#modal_update').modal('show');
 
-                    $("#updateCategoryForm").attr('action', 'category/api/update/' + result.category.id);
-                    $('#name_upd').val(result.category.name);
-                    $('#description_upd').val(result.category.description);
+                    $("#updateMenuForm").attr('action', 'menu/api/update/' + result.menu.id);
+                    $('#name_upd').val((result.menu.name).toUpperCase());
+                    $('#category_upd').val(result.menu.category_id).trigger('change');
+                    $('#description_upd').val(result.menu.description);
+                    if(result.menu.featured){
+                        $("#featuredSwitch_upd").prop("checked", true);
+                    }
+                    $('#price_upd').val(result.menu.price);
                  
                    
 
@@ -32,7 +41,7 @@
     function updateFunc(){
             
             Swal.fire({
-            title: 'Are you sure you want to update this Category?',
+            title: 'Are you sure you want to update this Menu?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -40,8 +49,8 @@
             confirmButtonText: 'Yes, update it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    var form = new FormData(document.getElementById("updateCategoryForm"));
-                    var url = $("#updateCategoryForm").attr('action');
+                    var form = new FormData(document.getElementById("updateMenuForm"));
+                    var url = $("#updateMenuForm").attr('action');
                     var csrfToken = $('meta[name="csrf-token"]').attr('content'); 
 
                         $.ajax({
@@ -72,7 +81,7 @@
                                         icon: 'success',
                                         title: data.message
                                     })
-                                    $('#category_datatable').DataTable().ajax.reload(null, false);
+                                    $('#menu_datatable').DataTable().ajax.reload(null, false);
                                 }
                                 else{
                                     Swal.fire({
