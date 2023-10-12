@@ -1,6 +1,6 @@
 <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Coreproc Inc. Project - Ordering System - 2023 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Online Ordering System - 2023 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0
     </div>
