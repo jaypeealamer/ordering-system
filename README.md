@@ -9,7 +9,7 @@
 
 
 ## Available Features (LARAVEL 10)
-<li> Login and register
+<li> Login and register(Admin Side)
 <li> Food Order 
 <li> Admin Panel
 <li> User Management
