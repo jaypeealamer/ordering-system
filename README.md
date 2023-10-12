@@ -17,7 +17,7 @@
 <li> Menus
 <li> Order Management
 <li> Order and Delivary Management
-##Login and Register
+## Login and Register
 ![image](https://github.com/jaypeealamer/ordering-system/assets/126539992/9248c03b-8a69-476f-b21b-10d158d632ff)
 ![image](https://github.com/jaypeealamer/ordering-system/assets/126539992/52defe9f-0ddb-4afb-83ca-f02986f2c347)
 
