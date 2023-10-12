@@ -74,7 +74,7 @@ class OrderController extends Controller
 
         return response()->json([
             'status' => 200,
-            'message' => 'Orders Created Successfully!',
+            'message' => 'Orders Successfully Created',
         ]);
     }
 

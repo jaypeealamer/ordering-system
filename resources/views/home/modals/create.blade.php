@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal_order"> 
+<div class="modal fade text-dark" id="modal_order"> 
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">

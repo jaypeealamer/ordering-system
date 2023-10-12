@@ -23,7 +23,7 @@ th{
             <div class="col-5" style="">
                  
                 <center>
-                    <h1 class="font-weight-bold text-warning m-4" style="
+                    <h1 class="font-weight-bold text-white m-4" style="
 	-webkit-text-stroke: 1px #2c2a2d;
 	text-shadow: 0px 1px 4px #2c2a2d;"> 
                         Food Menu
