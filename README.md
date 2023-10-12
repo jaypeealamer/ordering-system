@@ -8,7 +8,7 @@
 </p>
 
 
-## Available Features
+## Available Features (LARAVEL 10)
 <li> Login and register
 <li> Food Order 
 <li> Admin Panel
