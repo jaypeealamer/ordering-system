@@ -24,16 +24,7 @@
     <!-- Sidebar Menu -->
       <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-                with font-awesome or any other icon font library -->
-            <li class="nav-item">
-
-                    <a href="{{url('admin/dashboard')}}" class="nav-link  {{ (request()->is('admin')) ? 'active' : ''  }} ">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>Dashboard</p>
-                    </a>
-            </li>
-            
+        
             <li class="nav-item">
                 <a href="{{url('admin/menu')}}" class="nav-link  {{ (request()->is('admin/menu')) ? 'active' : ''  }} ">
                 <i class="nav-icon fas fa-book"></i>
@@ -43,11 +34,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="pages/calendar.html" class="nav-link">
+                <a href="{{url('admin/orders')}}" class="nav-link">
                 <i class="nav-icon fas fa-shopping-cart"></i>
                 <p>
                     Orders
-                    <span class="badge badge-info right">2 New</span>
+                    <span class="badge badge-info right" id="total_new_order"></span>
                 </p>
                 </a>
             </li>
@@ -75,3 +66,4 @@
         </div>
         <!-- /.sidebar -->
   </aside>
+  

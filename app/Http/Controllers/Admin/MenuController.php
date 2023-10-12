@@ -71,7 +71,7 @@ class MenuController extends Controller
         ]);
     }
 
-    // Get All List of Category
+    // Get All List of Menu
     public function getAllApi(){
         $data = Menu::with("thecategory")->get();
         return  DataTables::of($data)
@@ -169,7 +169,6 @@ class MenuController extends Controller
     public function update(Request $request, $id)
     {
         $id = $id;
-        return $request;
         $validator = validator($request->all(), [
             'name' => 'required|unique:menu_tbl,name, ' . $id,
             'price' => 'required',

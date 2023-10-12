@@ -37,6 +37,51 @@ $(function () {
 
   bsCustomFileInput.init();
 });
+// Get Total New Ordered Status
+ $.ajax({
+    type: "GET",
+    url: "{{route('get.count.new_order.api')}}",
+    success: function(result) {
+      $("#total_new_order").html(result + " new");
+    }
+});
+</script>
+
+<script>
+    function logoutFunc(){
+
+        Swal.fire({
+        title: 'Are you sure you want to Sign-out?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Sign-out!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+              var csrfToken = $('meta[name="csrf-token"]').attr('content'); 
+
+              $.ajax({
+                  url: "{{ url('logout') }}",
+                  type: "POST",
+                  dataType: "json", 
+                  headers: {
+                      'X-CSRF-TOKEN': csrfToken 
+                  },
+                  contentType: false,
+                  processData: false,
+                  success: function(response) {
+                    alert("Hell ")
+
+
+                  },
+              });
+              window.location.href = "{{ url('login') }}";
+
+
+            }
+        })
+    }
 </script>
 
 </body>

@@ -26,5 +26,12 @@
   @yield('css')
 
 </head>
+@if(request()->is('/'))
+<body class=" layout-navbar-fixed layout-footer-fixed layout-navbar-fixed control-sidebar-slide-open sidebar-collapse">
+
+@elseif(Auth::user())
 <body class="hold-transition sidebar-mini layout-fixed">
+@else
+<body class=" layout-navbar-fixed layout-footer-fixed layout-navbar-fixed control-sidebar-slide-open sidebar-collapse">
+@endif
 

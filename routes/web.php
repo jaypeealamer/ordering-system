@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\MenuController;
 /*
@@ -16,16 +17,19 @@ use App\Http\Controllers\Admin\MenuController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/order', [MenuController::class, 'index']);
+// Order Page
+Route::get('/', [OrderController::class, 'index']);
+Route::get('/order/api', [OrderController::class, 'getAllApi'])->name('get.all.order.api');
+Route::get('/order/api/details/{menuId}', [OrderController::class, 'show'])->name('get.show.order.api');
+Route::post('/order/api/update/{menuId}', [OrderController::class, 'store'])->name('menu.update');
 
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard.list');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [MenuController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -58,10 +62,16 @@ Route::middleware('auth')->group(function () {
         Route::get('/user', [UserController::class, 'index']);
         Route::post('/user/api/store', [UserController::class, 'store'])->name('user.store');
         Route::get('/user/api', [UserController::class, 'getAllApi'])->name('get.all.user.api');
-        Route::get('/user/api/active_inactive/{id}/{is_active}', [UserController::class, 'activeInactiveUser'])->name('get.active_inactive.user.api');
         Route::get('/user/api/details/{userId}', [UserController::class, 'show'])->name('get.show.user.api');
         Route::delete('/user/api/delete/{userId}', [UserController::class, 'destroy'])->name('user.destroy.api');
         Route::post('/user/api/update/{userId}', [UserController::class, 'update'])->name('user.update');
+        
+        // ORDERS
+        Route::get('/orders', [OrderController::class, 'indexAdmin']);
+        Route::get('/orders/api', [OrderController::class, 'getAllApiAdmin'])->name('get.all.orders.admin.api');
+        Route::get('/orders/api/history', [OrderController::class, 'getAllApiHistoryAdmin'])->name('get.all.orders.history.admin.api');
+        Route::get('/orders/total_new/api', [OrderController::class, 'countNewOrder'])->name('get.count.new_order.api');
+        Route::post('/orders/api/update_status/{userId}', [OrderController::class, 'updateStatus'])->name('orders.updateStatus');
         
     });
 

@@ -16,3 +16,13 @@
     height: fit-content !important;
 }
 
+.select2-selection--single {
+    height: fit-content !important;
+    border-radius: 10px !important;
+}
+
+.select2-selection__choice {
+    color: black !important;
+}
+
+
