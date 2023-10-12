@@ -17,7 +17,17 @@
 <li> Menus
 <li> Order Management
 <li> Order and Delivary Management
-    
+
+### Instructions: How to Run?
+1. After you finish downloading the project, unzip the project file and head over to your XAMPP/htdocs directory.
+2. Inside the “htdocs” folder, paste the project folder (not the .zip one, but the extracted one).
+3. Inside the laravel project run 'composer install'
+4. Then, go to the URL “http://localhost/phpmyadmin“.
+5. Setup .env file for the database, you can import the existing database or run "php artisan migrate" 
+6. Here is the login info for the existing database (username: test@gmail.com, password: 12345678)
+7. Run "php artisan serve" and "npm run dev"
+
+
 ## Login and Register
 ![image](https://github.com/jaypeealamer/ordering-system/assets/126539992/9248c03b-8a69-476f-b21b-10d158d632ff)
 ![image](https://github.com/jaypeealamer/ordering-system/assets/126539992/52defe9f-0ddb-4afb-83ca-f02986f2c347)
