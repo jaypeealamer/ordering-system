@@ -7,7 +7,7 @@
     height: 200px; 
     background-image: url('/assets/images/food_thumbnail.jpeg'); 
     background-size: cover; 
-    padding-top: 100px;
+    padding-top: 10px;
     background-position: center; 
 }
 th{
@@ -21,24 +21,18 @@ th{
    <div class="container-fluid bg-dark" id="thumbnail">
     <center>
             <div class="col-5" style="">
-                <div class="input-group">
-                    <select id="search"  multiple class="form-control form-control-lg">
-                        <option value="" selected></option>
-                            @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ ucwords($category->name) }}</option>
-                            @endforeach
-                    </select>
-                </div>
+                 
+                <center>
+                    <h1 class="font-weight-bold text-warning m-4" style="
+	-webkit-text-stroke: 1px #2c2a2d;
+	text-shadow: 0px 1px 4px #2c2a2d;"> 
+                        Food Menu
+                    </h1>
+                </center>
             </div>
-    </center>
-   </div>
-   <center>
-        <h1 class="font-weight-bold m-4">
-            Food Menu
-        </h1>
    </center>
     <!-- Main content -->
-    <section class="content">
+    <section class="content text-dark">
         <div class="container-fluid">
             <div class="card">
                 <!-- /.card-header -->
@@ -91,15 +85,7 @@ th{
 
 
 <script>
-   $(document).ready(function() {
-        $('#search').select2({
-            width: "100%",
-            placeholder: "Select Category",
-            allowClear: true,
-        })
 
-     
-    })
     
 </script>
 
